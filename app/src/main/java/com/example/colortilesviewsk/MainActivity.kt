@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-
 // тип для координат
 data class Coord(val x: Int, val y: Int)
 class MainActivity : AppCompatActivity() {
@@ -17,8 +16,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tiles[0][0] = findViewById(R.id.t00) // TODO: заполнить массив для всех тайлов
-        // еще 15 строк тут, id у плиток нужно по образцу внести в разметку
+        tiles = Array(4) { Array(4) { View(this) } }
+        tiles = arrayOf(
+            arrayOf(findViewById(R.id.t00), ),
+            arrayOf(),
+            arrayOf(),
+            arrayOf()
+        )
+        // TODO: заполнить массив для всех тайлов
+
     }
 
     fun getCoordFromString(s: String): Coord {
