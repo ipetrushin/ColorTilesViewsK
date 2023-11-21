@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tiles = Array(4) { Array(4) { View(this) } }
+        //tiles = Array(4) { Array(4) { View(this) } }
         tiles = arrayOf(
             arrayOf(findViewById(R.id.t00), ),
             arrayOf(),
@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             arrayOf()
         )
         // TODO: заполнить массив для всех тайлов
+
+        // TODO: заполнить поле случайными цветами
 
     }
 
@@ -52,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             changeColor(tiles[coord.x][i])
             changeColor(tiles[i][coord.y])
         }
+
+        // TODO: проверить раскраску поля на предмет победы
     }
 
     fun checkVictory() {
